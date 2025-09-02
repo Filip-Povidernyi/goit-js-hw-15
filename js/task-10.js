@@ -28,6 +28,7 @@ function createBoxes(amount) {
 function destroyBoxes() {
   const boxes = document.querySelector('#boxes');
   boxes.innerHTML = '';
+  // input.value = '';
 };
 
 createBtn.addEventListener('click', () => {

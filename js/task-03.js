@@ -22,3 +22,21 @@ for (let image of images) {
 const markupString = markupList.join('');
 
 list.insertAdjacentHTML("beforeend", markupString);
+list.style.display = 'flex';
+list.style.gap = '8px';
+list.style.flexWrap = 'wrap';
+list.style.flexDirection = 'column';
+
+list.addEventListener('click', event => {
+
+  const target = event.target;
+
+  if (target.nodeName === 'IMG') {
+
+    const width = target.width;
+    const height = target.height;
+
+    target.width = width / 4;
+    target.height = height / 4;
+  }
+});
