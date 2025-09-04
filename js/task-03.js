@@ -13,30 +13,6 @@ const images = [
   },
 ];
 const list = document.querySelector('.gallery');
-const markupList = [];
-for (let image of images) {
-  const markup = `<li><img src=${image.url} alt=${image.alt}/></li>`;
-  markupList.push(markup);
-};
 
-const markupString = markupList.join('');
-
-list.insertAdjacentHTML("beforeend", markupString);
-list.style.display = 'flex';
-list.style.gap = '8px';
-list.style.flexWrap = 'wrap';
-list.style.flexDirection = 'column';
-
-list.addEventListener('click', event => {
-
-  const target = event.target;
-
-  if (target.nodeName === 'IMG') {
-
-    const width = target.width;
-    const height = target.height;
-
-    target.width = width / 4;
-    target.height = height / 4;
-  }
-});
+const content = images.map(({ url, alt }) => `<li class="imgEl"><img class="image" src=${url} alt=${alt}/></li>`);
+list.insertAdjacentHTML("beforeend", content.join(''));

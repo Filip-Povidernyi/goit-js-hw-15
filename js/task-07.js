@@ -1,8 +1,7 @@
-const fontSizeCtrl = document.querySelector('#font-size-control');
-const textElem = document.querySelector('#text');
-fontSizeCtrl.value = fontSizeCtrl.min;
+const input = document.querySelector('#font-size-control');
+const text = document.querySelector('#text');
+input.value = input.min;
 
-fontSizeCtrl.addEventListener('input', () => {
-    textElem.style.fontSize = String(fontSizeCtrl.value) + 'px';
+input.addEventListener('input', (event) => {
+    text.style.fontSize = event.currentTarget.value + 'px';
 });
-

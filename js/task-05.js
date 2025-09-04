@@ -5,7 +5,7 @@ input.addEventListener('input', () => {
     const value = input.value;
     if (value) {
         output.textContent = value;
-    } else {
-        output.textContent = 'Anonymous';
+        return;
     };
+    output.textContent = 'Anonymous';
 });
